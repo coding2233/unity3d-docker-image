@@ -1,8 +1,8 @@
-FROM ubuntu:18.04
+FROM gableroux/unity3d:2019.1.4f1
 
-ARG DOWNLOAD_URL=https://beta.unity3d.com/download/8140fe378247/UnitySetup-2017.4.8f1
-ARG SHA1=119ec24433cf9e94ead7d62e64b69cec686d5aa5
-ARG COMPONENTS=Unity,Windows,Windows-Mono,WebGL,Mac,Mac-Mono,iOS,Android
+ARG DOWNLOAD_URL=https://beta.unity3d.com/download/ffa3a7a2dd7d/UnitySetup-2019.1.4f1
+ARG SHA1=e649ab9fc49a2e722b11acbf02729dd942646f2e
+ARG COMPONENTS=iOS,Android
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
@@ -130,4 +130,3 @@ RUN wget -nv ${DOWNLOAD_URL} -O UnitySetup && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
 
-ADD CACerts.pem /root/.local/share/unity3d/Certificates/
